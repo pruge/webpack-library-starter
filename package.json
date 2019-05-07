@@ -1,6 +1,6 @@
 {
   "name": "webpack-library-starter",
-  "version": "1.0.2",
+  "version": "0.0.0",
   "description": "Produce universal library with webpack and es6",
   "main": "lib/webpack-library-starter.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/krasimir/webpack-library-starter.git"
+    "url": "https://github.com/pruge/webpack-library-starter.git"
   },
   "keywords": [
     "webpack",
@@ -24,12 +24,12 @@
     "umd",
     "commonjs"
   ],
-  "author": "Krasimir Tsonev",
+  "author": "james kim",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/krasimir/webpack-library-starter/issues"
+    "url": "https://github.com/pruge/webpack-library-starter/issues"
   },
-  "homepage": "https://github.com/krasimir/webpack-library-starter",
+  "homepage": "https://github.com/pruge/webpack-library-starter",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.51",
     "@babel/core": "^7.0.0-beta.51",
@@ -38,6 +38,7 @@
     "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-env": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
     "chai": "^4.1.2",
@@ -47,11 +48,11 @@
     "jsdom": "11.11.0",
     "jsdom-global": "3.0.2",
     "mocha": "^4.0.1",
+    "nyc": "^13.1.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
-    "yargs": "^10.0.3",
-    "nyc": "^13.1.0"
+    "yargs": "^10.0.3"
   },
   "nyc": {
     "sourceMap": false,

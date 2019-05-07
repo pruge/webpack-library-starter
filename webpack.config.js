@@ -29,6 +29,9 @@ const config = {
     umdNamedDefine: true,
     globalObject: "typeof self !== 'undefined' ? self : this"
   },
+  node: {
+    fs: 'empty'
+  },
   module: {
     rules: [
       {

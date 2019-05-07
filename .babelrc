@@ -1,10 +1,25 @@
 {
-  "presets": ["env"],
-  "plugins": ["babel-plugin-add-module-exports"],
+  "presets": [
+    "env"
+  ],
+  "plugins": [
+    "babel-plugin-add-module-exports",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@": "./src",
+          "@lib": "./src/lib"
+        }
+      }
+    ]
+  ],
   "env": {
     "test": {
       "plugins": [
-        ["istanbul"]
+        [
+          "istanbul"
+        ]
       ]
     }
   }
