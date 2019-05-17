@@ -6,9 +6,9 @@
   "scripts": {
     "build": "webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
-    "test": "mocha --require babel-register --colors ./test/*.spec.js",
-    "test:watch": "mocha --require babel-register --colors -w ./test/*.spec.js",
-    "test:cover": "cross-env NODE_ENV=test nyc mocha --require babel-register --colors test/*.js",
+    "test": "jest",
+    "coverage": "npm run test -- --coverage",
+    "postcoverage": "open-cli coverage/lcov-report/index.html",
     "repl": "node -i -e \"$(< ./lib/webpack-library-starter.js)\""
   },
   "repository": {
@@ -46,10 +46,11 @@
     "dotenv-webpack": "^1.7.0",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
+    "jest": "^24.8.0",
     "jsdom": "11.11.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^4.0.1",
     "nyc": "^13.1.0",
+    "open-cli": "^5.0.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
