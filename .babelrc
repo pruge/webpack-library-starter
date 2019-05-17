@@ -1,18 +1,9 @@
 {
   "presets": [
-    "env"
+    "@babel/preset-env"
   ],
   "plugins": [
     "babel-plugin-add-module-exports",
-    [
-      "module-resolver",
-      {
-        "alias": {
-          "@": "./src",
-          "@lib": "./src/lib"
-        }
-      }
-    ]
   ],
   "env": {
     "test": {

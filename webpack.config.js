@@ -1,9 +1,11 @@
 /* global __dirname, require, module*/
 
+// eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
-const path = require('path');
+const { resolve } = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 const pkg = require('./package.json');
+const Dotenv = require('dotenv-webpack');
 
 let libraryName = pkg.name;
 
@@ -11,7 +13,7 @@ let outputFile, mode;
 
 if (env === 'build') {
   mode = 'production';
-  outputFile = libraryName + '.min.js';
+  outputFile = libraryName + '.js';
 } else {
   mode = 'development';
   outputFile = libraryName + '.js';
@@ -19,7 +21,9 @@ if (env === 'build') {
 
 const config = {
   mode: mode,
-  entry: ['@babel/polyfill', __dirname + '/src/index.js'],
+  entry: [
+    resolve(__dirname + '/core/index.js')
+  ],
   devtool: 'inline-source-map',
   output: {
     path: __dirname + '/lib',
@@ -31,9 +35,12 @@ const config = {
   },
   target: 'node',
   node: {
-    __dirname: false
+    __dirname: true
     // fs: 'empty' // for browser
   },
+  plugins: [
+    new Dotenv()
+  ],
   module: {
     rules: [
       {
@@ -49,7 +56,10 @@ const config = {
     ]
   },
   resolve: {
-    modules: [path.resolve('./node_modules'), path.resolve('./src')],
+    'alias': {
+      '@core': resolve(__dirname, 'core')
+    },
+    modules: ['node_modules'],
     extensions: ['.json', '.js']
   }
 };
