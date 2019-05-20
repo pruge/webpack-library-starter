@@ -54,6 +54,7 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
+    "webpack-source-map-support": "^2.0.1",
     "yargs": "^10.0.3"
   },
   "nyc": {
