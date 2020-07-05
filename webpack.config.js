@@ -44,6 +44,7 @@ const config = {
     __dirname: true
     // fs: 'empty' // for browser
   },
+  externals: [nodeExternals()],
   plugins: [
     new WebpackSourceMapSupport(),
     new Dotenv()
