@@ -6,6 +6,7 @@ const { resolve } = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 const pkg = require('./package.json');
 const Dotenv = require('dotenv-webpack');
+const nodeExternals = require('webpack-node-externals');
 
 let libraryName = pkg.name;
 
@@ -13,7 +14,7 @@ let outputFile, mode;
 
 if (env === 'build') {
   mode = 'production';
-  outputFile = libraryName + '.js';
+  outputFile = libraryName + '.min.js';
 } else {
   mode = 'development';
   outputFile = libraryName + '.js';
@@ -38,6 +39,7 @@ const config = {
     __dirname: true
     // fs: 'empty' // for browser
   },
+  externals: [nodeExternals()],
   plugins: [
     new Dotenv()
   ],
